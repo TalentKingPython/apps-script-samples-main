@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2022 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<html>
+<head>
+<?!= HtmlService.createHtmlOutputFromFile('stylesheet').getContent(); ?>
+</head>
+<body>
+
+<h1>Simple Tasks</h1>
+<p>
+  This application allows you to view your <a href="https://mail.google.com/tasks/canvas" target="_blank">Google Tasks</a>,
+  mark them as complete or incomplete, and add new tasks.
+</p>
+
+<label for="tasklist">Select a task list: </label>
+<select id="tasklist">
+  <option>Loading...</option>
+</select>
+
+<fieldset id="tasks-panel">
+  <legend>Tasks</legend>
+
+  <form name="new-task" id="new-task">
+    <label for="task-title">Add a new task:</label>
+    <input type="text" name="task-title" id="task-title" />
+    <input type="submit" name="add" id="add-button" value="Add" />
+  </form>
+
+  <ul id="tasks">
+    Loading...
+  </ul>
+</fieldset>
+
+<?!= HtmlService.createHtmlOutputFromFile('javascript').getContent(); ?>
+
+</body>
+</html>
